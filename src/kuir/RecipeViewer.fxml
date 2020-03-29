@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kuir.RecipeViewerController">
+	<children>
+      <Label fx:id="title" text="Title" />
+		<SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0">
+			<items>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <TableView fx:id="ingredients">
+              <columns>
+                <TableColumn prefWidth="75.0" text="Amount" />
+                <TableColumn prefWidth="75.0" text="Unit" />
+                  <TableColumn prefWidth="75.0" text="Ingredient" />
+              </columns>
+            </TableView>
+			</items>
+		</SplitPane>
+      <SplitPane dividerPositions="0.06269592476489028, 0.1614420062695925, 0.2554858934169279, 0.35266457680250785, 0.46551724137931033, 0.5282131661442007, 0.5830721003134797">
+         <items>
+            <Label text="Yield:" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4 loaves" />
+            <Label text="Cuisine:" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mexican" />
+            <Label text="Category:" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Main" />
+            <Label text="Diet:" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vegan" />
+         </items>
+      </SplitPane>
+      <SplitPane dividerPositions="0.06269592476489028, 0.1614420062695925, 0.2554858934169279, 0.35266457680250785, 0.46551724137931033">
+         <items>
+            <Label text="Preparation Time:" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="36" />
+            <Label text="Cooking Time:" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="40" />
+            <Label text="Total Time:" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="76" />
+         </items>
+      </SplitPane>
+      <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0">
+         <items>
+            <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+               <items>
+                  <Label text="Description" />
+                  <TextArea />
+               </items>
+            </SplitPane>
+            <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+               <items>
+                  <Label text="Steps" />
+                  <TextArea />
+               </items>
+            </SplitPane>
+         </items>
+      </SplitPane>
+		<ToolBar prefHeight="32.0" prefWidth="814.0">
+			<items>
+				<Button fx:id="editButton" mnemonicParsing="false" text="Edit" />
+            <Button fx:id="exportButton" mnemonicParsing="false" text="Export" />
+			</items>
+		</ToolBar>
+	</children>
+</VBox>

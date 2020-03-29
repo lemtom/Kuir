@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<VBox minWidth="640.0" prefHeight="400.0" prefWidth="640.0"
+	xmlns="http://javafx.com/javafx/11.0.1"
+	xmlns:fx="http://javafx.com/fxml/1" fx:controller="kuir.MainController">
+	<children>
+		<MenuBar VBox.vgrow="NEVER">
+			<menus>
+				<Menu mnemonicParsing="false" text="File">
+					<items>
+						<MenuItem mnemonicParsing="false" text="New" />
+						<MenuItem mnemonicParsing="false" text="Import file" />
+						<MenuItem mnemonicParsing="false" text="Import url" />
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem mnemonicParsing="false" text="Export recipes" />
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem mnemonicParsing="false" text="Quit" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Edit">
+					<items>
+						<MenuItem mnemonicParsing="false" text="Undo" />
+						<MenuItem mnemonicParsing="false" text="Redo" />
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem mnemonicParsing="false" text="Cut" />
+						<MenuItem mnemonicParsing="false" text="Copy" />
+						<MenuItem mnemonicParsing="false" text="Paste" />
+						<MenuItem mnemonicParsing="false" text="Delete" />
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem mnemonicParsing="false" text="Select All" />
+						<MenuItem mnemonicParsing="false" text="Unselect All" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Help">
+					<items>
+						<MenuItem mnemonicParsing="false" text="About Kuir" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+		<TableView fx:id="recipeTable" minWidth="640.0"
+			prefHeight="443.0" prefWidth="640.0">
+			<columns>
+				<TableColumn prefWidth="304.0" text="Name">
+					<cellValueFactory>
+						<PropertyValueFactory property="name" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="101.0" text="Category">
+					<cellValueFactory>
+						<PropertyValueFactory
+							property="recipeCategory" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="98.0" text="Cuisine">
+					<cellValueFactory>
+						<PropertyValueFactory
+							property="recipeCuisine" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="136.0" text="Time">
+					<cellValueFactory>
+						<PropertyValueFactory
+							property="totalTime" />
+					</cellValueFactory>
+				</TableColumn>
+			</columns>
+		</TableView>
+		<ToolBar prefHeight="40.0" prefWidth="200.0">
+			<items>
+				<Button mnemonicParsing="false" onAction="#addRecipe"
+					text="Add recipe" />
+			</items>
+		</ToolBar>
+	</children>
+</VBox>

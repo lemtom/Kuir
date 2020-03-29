@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="400.0" prefWidth="640.0"
+	xmlns="http://javafx.com/javafx/11.0.1"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="kuir.AddRecipeController">
+	<children>
+		<SplitPane dividerPositions="0.18181818181818182"
+			prefHeight="160.0" prefWidth="200.0">
+			<items>
+				<Label text="Name" />
+				<TextField fx:id="name" />
+			</items>
+		</SplitPane>
+		<SplitPane dividerPositions="0.18181818181818182, 0.5, 0.5"
+			prefHeight="160.0" prefWidth="200.0">
+			<items>
+				<Label text="Category" />
+				<ComboBox fx:id="category" prefWidth="150.0" />
+				<Label text="Cuisine" />
+				<TextField fx:id="cuisine" />
+			</items>
+		</SplitPane>
+		<SplitPane
+			dividerPositions="0.048589341692789965, 0.2962382445141066, 0.384012539184953"
+			prefHeight="160.0" prefWidth="200.0">
+			<items>
+				<Label text="Diet" />
+				<ComboBox fx:id="diet" prefWidth="150.0" />
+				<Label text="Yield" />
+				<TextField fx:id="yield" />
+			</items>
+		</SplitPane>
+		<SplitPane
+			dividerPositions="0.18181818181818182, 0.46238244514106586, 0.6144200626959248"
+			prefHeight="160.0" prefWidth="200.0">
+			<items>
+				<Label text="Preparation Time" />
+				<Spinner fx:id="prepTime" min="0" max="1000"
+					initialValue="0">
+					<editable>true</editable>
+				</Spinner>
+				<Label text="Cooking Time" />
+				<Spinner fx:id="cookTime" min="0" max="1000"
+					initialValue="0">
+					<editable>true</editable>
+				</Spinner>
+			</items>
+		</SplitPane>
+		<VBox fx:id="ingredients">
+			<children>
+				<Label text="Ingredients" />
+				<!--  
+				<SplitPane
+					dividerPositions="0.10188087774294671, 0.30407523510971785"
+					prefHeight="160.0" prefWidth="200.0">
+					<items>
+					<Spinner min="0.0" max="2000.0"
+					initialValue="0">
+					<editable>true</editable>
+				</Spinner>
+						<ComboBox fx:id="ingredientUnit1" prefWidth="150.0" />
+						<TextField />
+					</items>
+				</SplitPane>-->
+			</children>
+		</VBox>
+		<Button mnemonicParsing="false" onAction="#addIngredientButton" fx:id="addButton"
+			text="Add more fields" />
+		<Label text="Description" />
+		<TextArea fx:id="description" prefHeight="200.0"
+			prefWidth="246.0" />
+		<Label text="Instructions" />
+		<TextArea fx:id="instructions" />
+		<ToolBar prefHeight="32.0" prefWidth="814.0">
+			<items>
+				<Button mnemonicParsing="false" onAction="#saveRecipe" fx:id="saveButton"
+					text="Save" />
+			</items>
+		</ToolBar>
+	</children>
+</VBox>
